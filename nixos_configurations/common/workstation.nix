@@ -88,6 +88,11 @@
   # };
 
   programs.zsh.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "chewie" ];
+  };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
