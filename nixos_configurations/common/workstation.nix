@@ -30,6 +30,7 @@
   services.xserver = {
     layout = "ca";
     xkbVariant = "multi";
+    xkbOptions = "caps:escape";
 
     enable = true;
     autorun = true;
