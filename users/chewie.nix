@@ -18,6 +18,8 @@
   xsession.enable = true;
   xsession.windowManager.awesome.enable = true;
 
+  programs.zsh.enable = true;
+
   # Dotfiles
 
   home.file.".vimrc".source = "${dotfiles}/vim/.vimrc";
@@ -30,6 +32,7 @@
   home.file.".inputrc".source = "${dotfiles}/readline/.inputrc";
   home.file.".gitconfig".source = "${dotfiles}/git/.gitconfig";
   home.file.".gitignore".source = "${dotfiles}/git/.gitignore";
+  home.file.".zshrc".source = "${dotfiles}/zsh/.zshrc";
 
   xdg.configFile.awesome = {
     source = "${dotfiles}/awesome";

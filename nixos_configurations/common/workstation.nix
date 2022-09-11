@@ -61,6 +61,7 @@
     description = "Chewie";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
 
   # Enable automatic login for the user.
@@ -73,6 +74,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   ];
+
+  programs.zsh.enable = true;
+  environment.shells = [ pkgs.zsh ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
