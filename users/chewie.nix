@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     htop
     wget
+    curl
     rxvt-unicode
     python3
     vim_configurable
