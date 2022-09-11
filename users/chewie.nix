@@ -14,6 +14,7 @@
     vim_configurable
     universal-ctags
     most
+    _1password-gui
   ];
 
   xsession.enable = true;
