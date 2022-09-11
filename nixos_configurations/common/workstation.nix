@@ -75,7 +75,6 @@
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];
-  programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -86,6 +85,7 @@
   #   enableSSHSupport = true;
   # };
 
+  programs.zsh.enable = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
