@@ -13,6 +13,7 @@
     python3
     vim_configurable
     universal-ctags
+    most
   ];
 
   xsession.enable = true;
