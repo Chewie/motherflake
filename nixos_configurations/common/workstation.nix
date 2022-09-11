@@ -63,6 +63,8 @@
     shell = pkgs.zsh;
   };
 
+  security.polkit.enable = true;
+
   # Enable automatic login for the user.
   services.getty.autologinUser = "chewie";
 
