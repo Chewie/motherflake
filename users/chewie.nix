@@ -18,12 +18,16 @@
     polkit_gnome
   ];
 
+  # X stuff
+
   xsession.enable = true;
   xsession.windowManager.awesome.enable = true;
 
+  # Program configuration
+
   programs.zsh.enable = true;
 
-  # Dotfiles
+  # Generic dotfiles
 
   home.file.".vimrc".source = "${dotfiles}/vim/.vimrc";
   home.file.".vim" = {
@@ -36,11 +40,20 @@
   home.file.".gitconfig".source = "${dotfiles}/git/.gitconfig";
   home.file.".gitignore".source = "${dotfiles}/git/.gitignore";
   home.file.".zshrc".source = "${dotfiles}/zsh/.zshrc";
+  home.file.sshconfig = {
+    text = ''
+      Host *
+        IdentityAgent ~/.1password/agent.sock
+    '';
+    target = ".ssh/config";
+  };
 
   xdg.configFile.awesome = {
     source = "${dotfiles}/awesome";
     recursive = true;
   };
+
+  # Systemd user services
 
   systemd.user.services = {
     polkit-gnome-authentication-agent-1 = {
@@ -63,5 +76,4 @@
       };
     };
   };
-
 }
