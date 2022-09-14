@@ -16,6 +16,7 @@
     universal-ctags
     most
     polkit_gnome
+    kubectl
   ];
 
   # X stuff
