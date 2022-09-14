@@ -8,12 +8,12 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+  networking.hostName = "squirrel";
+
   boot.loader.grub = {
     enable = true;
     device = "/dev/sda";
   };
-  networking.hostName = "squirrel";
-
   boot.initrd.availableKernelModules = [ "ahci" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
