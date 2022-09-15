@@ -58,8 +58,11 @@
   };
 
 
-  services.k3s.enable = true;
-  networking.firewall.allowedTCPPorts = [ 6443 ];
+  services.k3s = {
+    enable = true;
+    extraFlags = "--disable-helm-controller --disable traefik --disable servicelb --disable local-storage --disable metrics-server";
+  };
+  networking.firewall.allowedTCPPorts = [ 80 6443 ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
