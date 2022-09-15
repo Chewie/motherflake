@@ -60,7 +60,7 @@
 
   services.k3s = {
     enable = true;
-    extraFlags = "--disable-helm-controller --disable traefik --disable servicelb --disable local-storage --disable metrics-server";
+    extraFlags = "--disable-helm-controller --disable traefik --disable local-storage --disable metrics-server";
   };
   networking.firewall.allowedTCPPorts = [ 80 6443 ];
 
