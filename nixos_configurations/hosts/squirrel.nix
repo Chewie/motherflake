@@ -19,6 +19,9 @@
   boot.kernelModules = [ "kvm-intel" "rbd" ];
   boot.extraModulePackages = [ ];
 
+  boot.kernel.sysctl."fs.inotify.max_user_instances" = 524288;
+  boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288;
+
   fileSystems."/" =
     { device = "/dev/disk/by-label/root";
       fsType = "ext4";
