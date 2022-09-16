@@ -16,7 +16,7 @@
   };
   boot.initrd.availableKernelModules = [ "ahci" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-intel" "rbd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
