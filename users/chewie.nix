@@ -17,6 +17,8 @@
     most
     polkit_gnome
     kubectl
+    argocd-autopilot
+    kubeseal
   ];
 
   # X stuff
