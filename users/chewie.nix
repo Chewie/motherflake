@@ -19,6 +19,7 @@
     kubectl
     argocd-autopilot
     kubeseal
+    awscli2
   ];
 
   # X stuff
