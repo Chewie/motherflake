@@ -65,7 +65,13 @@
     enable = true;
     extraFlags = "--disable traefik --disable local-storage --disable metrics-server";
   };
-  networking.firewall.allowedTCPPorts = [ 80 6443 ];
+  networking.firewall = {
+    allowedTCPPorts = [ 80 6443 ];
+    extraCommands = ''
+      iptables -A nixos-fw -p tcp --source 10.0.0.0/8 --dport 10250 -j nixos-fw-accept
+      iptables -A nixos-fw -p tcp --source 10.0.0.0/8 --dport 9100 -j nixos-fw-accept
+    '';
+  };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
