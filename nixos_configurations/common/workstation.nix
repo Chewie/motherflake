@@ -46,6 +46,8 @@
 
   services.getty.autologinUser = "chewie";
 
+  services.resolved.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
