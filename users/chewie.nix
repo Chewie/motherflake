@@ -20,6 +20,7 @@
     argocd-autopilot
     kubeseal
     awscli2
+    dnsutils
   ];
 
   # X stuff
