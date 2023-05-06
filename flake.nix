@@ -46,6 +46,7 @@
         profiles.system = {
           sshUser = "root";
           user = "root";
+          sshOpts = [ "-p" "5122" ];
           path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.squirrel;
         };
       };

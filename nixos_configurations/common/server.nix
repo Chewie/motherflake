@@ -25,9 +25,12 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  services.openssh.enable = true;
+  services.openssh = {
+      enable = true;
+      ports = [ 5122 ];
+  };
 
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [ 5122 ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
