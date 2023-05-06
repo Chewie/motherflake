@@ -42,7 +42,7 @@
     };
     deploy.nodes = {
       squirrel = {
-        hostname = "squirrel.deliciousmuffins.net";
+        hostname = "squirrel.loutre.tel";
         profiles.system = {
           sshUser = "root";
           user = "root";
