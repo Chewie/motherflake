@@ -63,14 +63,11 @@
 
   services.k3s = {
     enable = true;
-    extraFlags = "--disable traefik --disable local-storage --disable metrics-server";
+    extraFlags = "--https-listen-port 64443 --disable-kube-proxy --disable-network-policy --flannel-backend=none --egress-selector-mode=disabled --disable=traefik --disable=local-storage --disable=metrics-server";
   };
   networking.firewall = {
-    allowedTCPPorts = [ 80 6443 ];
-    extraCommands = ''
-      iptables -A nixos-fw -p tcp --source 10.0.0.0/8 --dport 10250 -j nixos-fw-accept
-      iptables -A nixos-fw -p tcp --source 10.0.0.0/8 --dport 9100 -j nixos-fw-accept
-    '';
+    # Cilium takes care of that
+    enable = false;
   };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
