@@ -65,6 +65,12 @@
     enable = true;
     extraFlags = "--https-listen-port 64443 --disable-kube-proxy --disable-network-policy --flannel-backend=none --egress-selector-mode=disabled --disable=traefik --disable=local-storage --disable=metrics-server";
   };
+
+  services.openiscsi = {
+    enable = true;
+    name = "squirrel";
+  };
+
   networking.firewall = {
     # Cilium takes care of that
     enable = false;
